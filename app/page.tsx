@@ -2,25 +2,48 @@ import { getPosts } from "@/lib/getPosts";
 import Image from "next/image";
 import Link from "next/link";
 import TiltCard from "./components/TiltCard";
+import { ArrowUpRight } from "lucide-react";
 
 export default async function Home() {
 
   return (
-  <div className="bg-linear-to-b from-blue-950 to-gray-900 w-full flex flex-col items-center justify- text-white">
+  <div className="bg-linear-to-b from-blue-950 to-gray-900 w-full flex flex-col items-center justify- text-white overflow-x-hidden">
     
     <div className="p-10 flex flex-col items-center gap-3 ">
       <div className="flex flex-row items-center gap-3">
-        <Image src="/icon.jpg" alt="Abdou Belounis" width={100} height={100} className="rounded-full" />
-        <h1 className="text-6xl  font-outfit font-semibold">Abdou's blog</h1>
+        <Image src="/icon.jpg" alt="Abdou Belounis" width={100} height={100} className="rounded-full lg:w-fit md:w-25  w-20" />
+        <h1 className="lg:text-6xl text-3xl md:text-5xl  font-outfit font-semibold">Abdou's blog</h1>
       </div>
-      <p className="text-xl font-poppins font-medium">
+
+      <p className="lg:text-xl text-lg font-poppins md:text-xl font-medium text-center">
         Slop-free notes on tech, startups, and life.
       </p>
+
+      <a 
+        href="https://abdoubelounis.com" 
+        className="flex items-center gap-1.5 text-slate-400 hover:text-amber-300 text-sm font-poppins transition-colors duration-150"
+      >
+        <span>by Abdou Belounis</span>
+        <ArrowUpRight size={14} />
+      </a>
+
     </div>
 
-    <div className="lg:grid lg:gap-y-2 flex flex-col lg:grid-cols-3">
+    <div className="lg:grid lg:gap-y-2 flex max-w-screen md:grid-cols-2 md:grid md:gap-x-2 lg:gap-x-0 md:gap-y-4 items-center flex-col lg:grid-cols-3">
     {getPosts().map((post) => (
-      <Link key={post.slug} href={post.slug}> <TiltCard ><div  className="p-4 rounded-sm m-2 gap-y-5 gap-x-1.5 flex flex-col items-center h-65 w-100 bg-gray-900 border border-white ">
+
+      
+      <Link key={post.slug} href={post.slug} className="w-full flex justify-center"> 
+
+      <div className="md:hidden w-full py-4 border-b border-gray-800 flex justify-between items-center hover:opacity-80">
+          <span className="text-amber-300 font-outfit text-lg font-bold">
+            {post.title}
+          </span>
+          <span className="text-gray-400 text-sm pl-2">→</span>
+      </div>
+
+
+      <TiltCard ><div  className="p-4 rounded-sm hidden md:flex m-2 gap-y-5  flex-col items-center w-100 bg-gray-900 border border-white ">
         <Image 
         src={post.image}
         alt={post.title}
@@ -37,9 +60,9 @@ export default async function Home() {
 
     <div className="p-10 flex flex-col items-center ">
 
-    <div className="flex w-full gap-x-20  flex-row items-center justify-around" >
+    <div className="flex w-full lg:gap-x-20 md:gap-x-20 gap-x-5 flex-row items-center justify-center lg:justify-around" >
 
-  <div>
+      <div>
             <a 
               target="_blank" 
               rel="noopener noreferrer"
