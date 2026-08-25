@@ -2,10 +2,38 @@ import { getPosts } from "@/lib/getPosts";
 import ReactMarkdown from 'react-markdown';
 import Link from "next/link";
 import { ArrowLeft, Home } from "lucide-react";
+import { Metadata } from "next";
 
 interface PageProps {
   params: {
     slug: string;
+  };
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const posts = getPosts();
+  const post = posts.find((p) => p.slug === slug);
+
+  if (!post) {
+    return {
+      title: "404 - Post Not Found | Abdou's Blog",
+    };
+  }
+
+  return {
+    title: `${post.title} | Abdou's Blog`,
+    description: post.content.slice(0, 150) + "...", 
+    openGraph: {
+      title: post.title,
+      description: post.content.slice(0, 150) + "...",
+      type: "article",
+      images: [
+        {
+          url: post.image,
+        },
+      ],
+    },
   };
 }
 
@@ -89,6 +117,21 @@ async function ArticlePage({ params }: PageProps) {
                   {children}
                 </blockquote>
               ),
+              // images
+              img: ({ src, alt }) => (
+                <img src={src} alt={alt} className="w-full h-auto object-contain my-6 rounded-sm" />
+              ),
+              // links
+              a: ({ href, children }) => (
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-amber-300 cursor-pointer hover:text-amber-400 underline underline-offset-2 transition-colors"
+                >
+                  {children}
+                </a>
+              )
             }}
           >
           {post.content}</ReactMarkdown>
