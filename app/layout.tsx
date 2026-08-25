@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Poppins, Outfit } from "next/font/google";
 import "./globals.css";
+import localFont from 'next/font/local';
+
+const georgia = localFont({
+  src: '../public/fonts/georgia.ttf',
+  variable: '--font-georgia',
+  display: 'swap',
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,7 +44,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${outfit.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${outfit.variable} ${georgia.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-linear-to-b from-blue-950 to-gray-900">{children}</body>
     </html>
