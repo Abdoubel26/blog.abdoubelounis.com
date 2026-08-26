@@ -72,7 +72,7 @@ async function ArticlePage({ params }: PageProps) {
     <div className="w-full flex flex-col justify-center items-center max-w-4xl">
       <Link 
         href="/" 
-        className="inline-flex items-center gap-2 text-sm font-georgia text-slate-400 hover:text-white hover:underline transition-colors mb-8 group"
+        className="inline-flex self-start items-center gap-2 text-sm font-georgia text-slate-400 hover:text-white hover:underline transition-colors mb-8 group"
       >
         <ArrowLeft size={16} className="transition-transform" /> 
         Back to home
