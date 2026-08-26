@@ -1,0 +1,111 @@
+---
+title: "The realistic way we can shield a Martian colony from radiation"
+image: "https://i.pinimg.com/1200x/14/0c/07/140c07063d2a72c7c1e2dcdf0c390747.jpg"
+---
+
+
+
+
+# **The realistic way we can shield a Martian colony from radiation**
+
+
+
+
+
+Almost all suggested models for shielding Mars completely or just a local colony have a two flaws that removing one adds the other, they usually need a lot of power or are highly impractical and come with huge logistical challenges that can't be solved anywhere near the foreseeable future. This proposal is by no means an easy way we can achieve radiation shielding overnight, it is still difficult and there will be no easy way for doing such a mega-project. But this concept explores a less traditional approach to solving the problem by combining a lot of niche newly born technologies that we can harness to make the task of shielding a Gibraltar (7 km²) sized of Martian colony sound slightly more realistic. 7 km² is near the UN average of a functioning town of around 5,000 to 10,000 individuals.
+
+
+
+## **The architecture:**
+
+
+
+The concept behind this is separated into three components:
+
+
+
+1. **Magnetic Field Generation**
+2. **Power Generation**
+3. **Power Transfer**
+
+
+
+## **1. Magnetic Field Generation:**
+
+
+
+Since we are trying to shield a localized colony on the surface, the best thing to start with is a colony that isn't completely out in the open for radiation, whether by building domes with layers of water in between or building most critical infrastructure beneath the surface in lava tubes. To shield the colony 24/7 I initially thought of a solenoid electromagnet (or potentially multiple electromagnets) located in an areostationary orbit (around 17,032 kilometers or 10,583 miles) above the colony these will be in an orbit that is always above the colony (just like a geostationary orbit on Earth) so the colony is always under cover, but what I then soon discovered that this will protect the colony on at peak noon and launching tons of material to an areostationary orbit in another planet isn't exactly "realistic."
+
+For a more practical approach we would have to dig a \~1.5 meters deep trench encircling the colony with a radius of around 1.5 kilometers and a circumference of 9.5 km, this trench will then have a hollow 1 meter diameter steel tube placed inside it, the tube will have two layers with a vacuum between the outer and the inner layers to provide temperature isolation, essentially functioning similar to a cryostat. for a 9.5 km circumference tube this will be around 185 metric tons of stainless steel, which can be relatively easy to ship with the 100-150 metric tons SpaceX's Starship (around 2 voyages will be enough and the second will have enough room for other cargo).
+
+After the steel tube is installed, it will have a central copper core that will be wrapped with REBCO superconducting tape, around 10,000 times, the tape is 4 mm wide and 0.1 mm thick, for 10,000 loops this will require around 93,800 kilometers of REBCO tape, which will weigh around 25 metric tons, and counting the central copper core this will give us a total of around 50 metric tons, which can easily fit inside the second voyage of shipping the steel tube if we consider Starship's capacity is around 125 metric tons. The final setup of the tube will filled with liquid nitrogen to keep temperatures below 90 Kelvin, this will require 400,000 liters (105668 gallons) of  liquid nitrogen shipped, which is approximately 330 metric tons, this is a massive payload but still doable if starship meets its promised cargo capacity also 1.9% of Mars' atmosphere is nitrogen so we can extract some on site but liquifying it is another deal.
+
+With installation of the superconducting ring is complete we will have to "energize" it by connecting the REBCO cable to a high capacity direct current power supply for a certain amount of time (I will get into this later) until we reach a staggering 6.64 million Ampere-turns, that is each one of the 10,000 tape strands will need about 664 ampere of current flowing in it.
+
+
+
+
+
+## **2. Power Generation:**
+
+
+
+Power is always is one of the biggest hurdles we face in any system we try introduce to shield a colony from radiation. But for this superconducting ring, while it does need a massive 60 Megawatt-hours or the equivalent of 216 Gigajoules of energy, this energy won't be needed as long as the superconducting ring reaches it's intended Ampere-turns (which could take hours to days). It all comes to the REBCO superconducting tape, and because the system is a closed loop this energy will stay there indefinitely (It turns out that HTS materials like REBCO do indeed have zero electric resistance under direct current conditions) although from an engineering perspective making the system lose entire 0 energy isn't very practical, first comes the joints, because the copper core won't be a single object but rather multiple ones connected inside the steel tube the joints between them will cause the entire 60 Megawatt-hours of magnetic energy to turn to heat almost instantly if the system gets hotter than 90 K.
+
+The way I suggest we energize the superconducting ring is using solar power, and there are one appraoches for this, one comes more practical with some trade-offs.
+
+
+
+The first approach is simply using a solar farm on land out side the colony, nearby, to meet our energy needs on the surface we will need around 4000 m² of solar panels with 30% efficiency, which is a relatively small area. But we still have to deal with the frequent dust storms (although since we need all the farm to supply power for only a few hours to energize the ring storms don't matter that much). with some help of automation the panels can clear their tops using brushes that swipe through them (a technology already used here on Earth in deserted places) but this isn't something that fixes the dust storm issue.
+
+
+
+The second more "sci-fi" approach is something similar to a planet based dyson-sphere (though the panels are pointed outwards) where a Sun-Synchronous Solar Power Sation is placed in Mars' orbit where it always faces the sun (the "sun-syncrhonous" part). Because in orbit solar panels don't have to deal with dust storms and the atmosphere that block some sunlight, the area of solar panels we drops to 3,300 m², while not substancialy low, this solar farm will be able to provide energy 24/7 (no cuts during night) and it won't have to deal with any dust storms that can block sunlight for months (this is how NASA's Opportunity rover was rendered useless in 2018 after it's sunlight was blocked from it for months due to a harsh dust storm). This technology is succesfully tested by Caltech in Earth's orbit.
+
+A third easier but currently unavailable option I would like to add is to use a compact nuclear reactor, while this technology sounds cool (and is cool) it is currently still far away from reality but if companies like Kairos Power and TerraPower succeed in making this technology real it would essentially solve all of our current problems, since they don't depend on sunlight and are easily transported inside starship we could power colonies and radiation shields bigger than our wildest dreams.
+
+
+
+
+
+## **3. Power Transfer:**
+
+
+
+In the case where the solar farm is land based power transfer would be straightforward since the current has to be direct and solar panels already provide DC then we won't need any changes and the superconducting ring will pluged into the power source normally. As for the compact nuclear reactor, we will need a rectifier to convert the alternating current to direct current and then connected to the superconducting ring. 
+
+As for the Space-Based Solar farm, it's much more complicated, to transfer power from orbit or the surface we need to convert it into a laser beam that then is headed towards a relay satellite that is placed in a position where both the colony and the sun-synchronous solar farm is in within site (I didn't do the orbital mechanics on this so we might end up needing more than one relay satellite) what the relay satellite essentially is a passive optical relay that is receives the laser with Dielectric Mirrors that use non-metallic substances silicon dioxide and have extremely high reflectivity (99.99%) and minimal thermal load which makes the heat created by the laser easily shed into deep space using radiators, I'm not very informed in material science but I did a brief research on this. This mirror will redirect the laser beam toward the receiver pad near the colony (or to another mirror if it's not in sight with both the solar farm and the colony) the pad then transfers the laser beam into a direct current and is directed at teh superconducting ring and it's cooling apparatus. Because the solar farm is in sun-synchronous orbit it's angle will always change as Mars rotates around it self, this is where a dynamic system in the relay satellites comes in to dynamically adujst the angle of reflection so it successfully receives and reflects the beam from and to the right directions.**
+
+
+
+After the superconducting ring is fully charged, the energy than can be redirected into powering other parts of the colony or just powering the cryocoolers that will keep the ring in the right temperature.
+
+
+
+## **The Reality:**
+
+
+
+while this is still very futuristic technology, it's somewhat very achievable if we succeed in creating the right technologies over the next few decades. Compact Nuclear Reactors are especially very useful and can do a lot of the heavy lifting for us by eliminating the need of constant sunlight all together. But for now I thing an approach that combines between a land based and a space-based solar farm would be the best choice, I understand that a land based solar farm looks more intuitive and practical but considering the dangers of dust storms (which can cut power for cryocoolers breaking the whole system and exposing the colony to constant radiation).
+
+
+While this superconducting ring will be able to shield the colony from all SPEs (solar particle events) it will be only partially protecting it from GCRs (Galactic Cosmic Rays) so further shielding using materials is still required for a really safe colony. Estimating the cost of the materials I reached a figure of around 4.5 Billion USD which isn't that much when you think about it, for example, Harvard's annual endowment is $56 Billion, so in theory Harvard can cover the material cost for a colony on Mars. though this cost is only for the materials, if we account for the launch, and other logistics the price tag can go way beyond 20$ billion. 
+
+
+
+so would this work? theoretically yes, but practically no, atleast currently, but I believe that the field of radiation shielding is going to advance beyond what we can imagine in the next decades and this will be more possible than ever.
+
+
+Thanks for Reading ❤️
+
+
+
+
+
+&#x20;
+
+
+
+
+
+

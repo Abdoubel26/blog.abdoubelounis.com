@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import Link from "next/link";
 import { ArrowLeft, Home } from "lucide-react";
 import { Metadata } from "next";
+import remarkBreaks from 'remark-breaks';
 
 interface PageProps {
   params: {
@@ -67,8 +68,8 @@ async function ArticlePage({ params }: PageProps) {
   }
 
   return (
-<div className="min-h-screen bg-linear-to-b from-gray-950 to-blue-950 text-slate-200 flex flex-col items-center py-12 px-4 sm:px-8 lg:px-12">
-    <div className="w-full max-w-4xl">
+<div className="min-h-screen bg-linear-to-b w-screen lg:w-auto from-gray-950 to-blue-950 text-slate-200 flex flex-col items-center py-12 px-4 sm:px-8 lg:px-12">
+    <div className="w-full flex flex-col justify-center items-center max-w-4xl">
       <Link 
         href="/" 
         className="inline-flex items-center gap-2 text-sm font-georgia text-slate-400 hover:text-white hover:underline transition-colors mb-8 group"
@@ -77,9 +78,10 @@ async function ArticlePage({ params }: PageProps) {
         Back to home
       </Link>
 
-      <article className="bg-[#1c2541]/40 border border-gray-400 rounded-xs p-8 sm:p-14 shadow-2xl backdrop-blur-md">
+      <article className="bg-[#1c2541]/40 lg:border md:border border-t border-gray-400 rounded-xs lg:w-auto md:w-auto w-screen lg:p-8 md:p-8 p-3 pt-8 sm:p-14 shadow-2xl backdrop-blur-md">
         <div className="markdown-body bg-transparent! text-slate-200! border-none">
           <ReactMarkdown
+            remarkPlugins={[remarkBreaks]}
             components={{
               // Title
               h1: ({ children }) => (
