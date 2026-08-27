@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     .trim()
     .slice(0, 160) + "...";
 
-  const articleImage = post.image || "https://blog.abdoubelounis.com/default-og.png"; 
+  const articleImage = post.image || "https://blog.abdoubelounis.com/icon.jpg";
 
   return {
     title: `${post.title} | Abdou's Blog`,
