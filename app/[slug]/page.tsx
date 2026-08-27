@@ -11,6 +11,7 @@ interface PageProps {
   };
 }
 
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const posts = getPosts();
@@ -22,18 +23,40 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
+  const cleanDescription = post.content
+    .replace(/[#*`_>]/g, "") 
+    .replace(/\s+/g, " ")     
+    .trim()
+    .slice(0, 160) + "...";
+
+  const articleImage = post.image || "https://blog.abdoubelounis.com/default-og.png"; 
+
   return {
     title: `${post.title} | Abdou's Blog`,
-    description: post.content.slice(0, 150) + "...", 
+    description: cleanDescription,
+    
     openGraph: {
       title: post.title,
-      description: post.content.slice(0, 150) + "...",
+      description: cleanDescription,
+      url: `https://blog.abdoubelounis.com/blog/${post.slug}`,
+      siteName: "Abdou's Blog",
       type: "article",
       images: [
         {
-          url: post.image,
+          url: articleImage,
+          width: 1200,
+          height: 630,
+          alt: post.title,
         },
       ],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: cleanDescription,
+      creator: "@abdou_belounis", 
+      images: [articleImage],
     },
   };
 }
