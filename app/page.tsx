@@ -7,7 +7,7 @@ import { ArrowUpRight } from "lucide-react";
 export default async function Home() {
 
   return (
-  <div className="bg-linear-to-b from-blue-950 to-gray-900 w-full flex flex-col items-center justify- text-white overflow-x-hidden">
+  <div className="bg-linear-to-b from-blue-950 to-gray-900 w-full flex flex-col items-center min-h-screen text-white overflow-x-hidden">
     
     <div className="p-10 flex flex-col items-center gap-3 ">
       <div className="flex flex-row items-center gap-3">
