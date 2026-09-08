@@ -102,6 +102,17 @@ async function ArticlePage({ params }: PageProps) {
       </Link>
 
       <article className="bg-[#1c2541]/40 lg:border md:border border-t border-gray-400 rounded-xs lg:w-auto md:w-auto w-screen lg:p-8 md:p-8 p-3 pt-8 sm:p-14 shadow-2xl backdrop-blur-md">
+
+      {post.date && (
+    <div className="mb-4 text-sm text-slate-400 font-serif">
+      {new Date(post.date).toLocaleDateString('en-US', {
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric',
+      })}
+    </div>
+  )}
+  
         <div className="markdown-body bg-transparent! text-slate-200! border-none">
           <ReactMarkdown
             remarkPlugins={[remarkBreaks]}
