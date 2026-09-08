@@ -35,7 +35,7 @@ export default async function Home() {
       
       <Link key={post.slug} href={post.slug} className="w-full flex justify-center"> 
 
-      <div className="md:hidden w-full py-4 border-b border-gray-800 flex justify-between items-center hover:opacity-80">
+      <div className="md:hidden w-full py-4 border-b mx-3 border-gray-800 flex justify-between items-center hover:opacity-80">
           <span className="text-amber-300 font-outfit text-lg font-bold">
             {post.title}
           </span>
